@@ -1,0 +1,43 @@
+name: Build Project + Backend Tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.10.0'
+
+    - name: Install dependencies
+      run: |
+        cd coupetonarbrefrontend
+        npm install
+
+    - name: Build and test React app
+      run: |
+        cd coupetonarbrefrontend
+        CI=false npm run build
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '17'
+
+    - name: Build and test backend
+      run: |
+        cd coupetonarbrebackend
+        chmod +x ./gradlew
+        ./gradlew clean build
