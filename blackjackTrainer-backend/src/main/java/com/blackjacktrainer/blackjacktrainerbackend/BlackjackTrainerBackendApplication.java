@@ -9,5 +9,6 @@ public class BlackjackTrainerBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BlackjackTrainerBackendApplication.class, args);
 	}
+	// Comment
 
 }
