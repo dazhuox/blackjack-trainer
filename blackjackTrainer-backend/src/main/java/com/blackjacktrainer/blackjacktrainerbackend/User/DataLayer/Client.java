@@ -21,4 +21,5 @@ public class Client {
     public String email;
     public String phoneNumber;
     public String address;
+    public double height;
 }
