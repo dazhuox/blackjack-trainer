@@ -16,9 +16,9 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     public String clientId;
+    public String username;
     public String firstName;
     public String lastName;
     public String email;
     public String phoneNumber;
-    public String address;
 }
