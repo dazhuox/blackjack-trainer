@@ -1,2 +1,4 @@
-package com.blackjacktrainer.blackjacktrainerbackend.Game.DataLayer;public class Deck {
+package com.blackjacktrainer.blackjacktrainerbackend.Game.DataLayer;
+
+public class Deck {
 }
