@@ -34,4 +34,9 @@ public class ClientServiceImpl implements ClientService {
         }
         return clientResponseMapper.entityToResponseModel(client);
     }
+
+    @Override
+    public ClientResponseDTO deleteClientById(String id) {
+        return null;
+    }
 }
