@@ -6,6 +6,7 @@ import com.blackjacktrainer.blackjacktrainerbackend.User.DataMapperLayer.ClientR
 import com.blackjacktrainer.blackjacktrainerbackend.User.DataMapperLayer.ClientResponseMapper;
 import com.blackjacktrainer.blackjacktrainerbackend.User.PresentationLayer.ClientRequestDTO;
 import com.blackjacktrainer.blackjacktrainerbackend.User.PresentationLayer.ClientResponseDTO;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +34,11 @@ public class ClientServiceImpl implements ClientService {
             return null;
         }
         return clientResponseMapper.entityToResponseModel(client);
+    }
+
+    @Transactional
+    @Override
+    public void deleteClientById(String id) {
+        clientRepository.deleteByClientId(id);
     }
 }

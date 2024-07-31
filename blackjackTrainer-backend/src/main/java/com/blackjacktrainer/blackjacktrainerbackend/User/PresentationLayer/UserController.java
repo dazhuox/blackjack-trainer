@@ -29,6 +29,11 @@ public class UserController {
         }
         return ResponseEntity.ok(clientResponseDTO);
     }
+    @DeleteMapping("/clients/{clientId}")
+    public ResponseEntity<Void> deleteAppointment(@PathVariable String clientId) {
+        clientService.deleteClientById(clientId);
+        return ResponseEntity.noContent().build();
+    }
 
     @GetMapping("/data")
     public String getData() {
