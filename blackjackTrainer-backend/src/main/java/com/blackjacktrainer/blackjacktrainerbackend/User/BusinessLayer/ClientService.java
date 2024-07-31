@@ -4,5 +4,6 @@ import com.blackjacktrainer.blackjacktrainerbackend.User.PresentationLayer.Clien
 
 public interface ClientService {
     ClientResponseDTO getClientById(String id);
-    ClientResponseDTO deleteClientById(String id);
+    void deleteClientById(String id);
+
 }
